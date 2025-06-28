@@ -1,7 +1,4 @@
-# Re-run after code environment reset
-# Create full updated HTML file and zip it for download
-
-full_html_with_tracking = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -52,14 +49,17 @@ full_html_with_tracking = """<!DOCTYPE html>
     <h1>TrustCar</h1>
     <p>Tourist Car & Motorbike Booking and Rental in Namsai</p>
   </header>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#book">Book Now</a>
     <a href="#contact">Contact</a>
   </nav>
+
   <section class="hero" id="home">
     <div>Book a Car or Rent a Motorbike in Namsai</div>
   </section>
+
   <section class="content">
     <h2 style="text-align:center;">Available Vehicles</h2>
     <div class="vehicles">
@@ -74,6 +74,7 @@ full_html_with_tracking = """<!DOCTYPE html>
         <p>Rent a motorbike for solo travel</p>
       </div>
     </div>
+
     <h2 id="book" style="text-align:center;">Book Now</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
@@ -94,30 +95,17 @@ full_html_with_tracking = """<!DOCTYPE html>
       </select>
       <button type="submit">Book Now</button>
     </form>
+
     <h2 id="contact" style="text-align:center; margin-top:40px;">Contact Us</h2>
     <p style="text-align:center;">Call or WhatsApp us at: <strong>9862522203</strong></p>
     <div style="text-align:center;">
       <a class="whatsapp" href="https://wa.me/919862522203" target="_blank">Chat on WhatsApp</a>
     </div>
   </section>
+
   <footer>
     &copy; 2025 TrustCar | Serving Namsai & Surrounding Areas
   </footer>
 </body>
 </html>
-"""
-
-# Save and zip
-from zipfile import ZipFile
-
-html_path = "/mnt/data/index.html"
-zip_path = "/mnt/data/trustcar_full_updated.zip"
-
-with open(html_path, "w") as f:
-    f.write(full_html_with_tracking)
-
-with ZipFile(zip_path, "w") as zipf:
-    zipf.write(html_path, arcname="index.html")
-
-zip_path
-  
+       
