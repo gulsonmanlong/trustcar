@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TrustCar - Book Car & Bike in Namsai | Tourist Travel Booking</title>
 
-  <!-- ✅ Google Search Console Verification -->
+  <!-- Google Verification -->
   <meta name="google-site-verification" content="hzpPqH8y907KwrVlA6ikdbbnuN4vDOV735ydDEqkoH4" />
 
-  <!-- ✅ Google Analytics Tracking -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PMBBYDDYN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -76,23 +76,29 @@
     </div>
 
     <h2 id="book" style="text-align:center;">Book Now</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <input type="text" placeholder="Pickup Location" required />
-      <input type="text" placeholder="Drop Location" required />
-      <input type="date" required />
-      <input type="time" required />
-      <select required>
+    <form action="https://formsubmit.co/trustcar303@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://gulsonmanlong.github.io/Trust-Car/thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="text" name="pickup" placeholder="Pickup Location" required />
+      <input type="text" name="drop" placeholder="Drop Location" required />
+      <input type="date" name="date" required />
+      <input type="time" name="time" required />
+
+      <select name="vehicle" required>
         <option value="">Select Vehicle</option>
         <option value="car">Car</option>
         <option value="motorbike">Motorbike</option>
       </select>
-      <select required>
+
+      <select name="service_type" required>
         <option value="">Select Service Type</option>
         <option value="book">Book a Vehicle</option>
         <option value="rental">Rent the Vehicle</option>
       </select>
+
       <button type="submit">Book Now</button>
     </form>
 
@@ -108,4 +114,3 @@
   </footer>
 </body>
 </html>
-       
