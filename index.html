@@ -1,12 +1,24 @@
-<!DOCTYPE html>
+# Re-run after code environment reset
+# Create full updated HTML file and zip it for download
+
+full_html_with_tracking = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TrustCar | Book Your Ride in Namsai</title>
+  <title>TrustCar - Book Car & Bike in Namsai | Tourist Travel Booking</title>
 
   <!-- ✅ Google Search Console Verification -->
   <meta name="google-site-verification" content="hzpPqH8y907KwrVlA6ikdbbnuN4vDOV735ydDEqkoH4" />
+
+  <!-- ✅ Google Analytics Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PMBBYDDYN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6PMBBYDDYN');
+  </script>
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Book cars and motorbikes online in Namsai. Fast, affordable, and tourist-friendly rides. Call 9862522203 for instant bookings.">
@@ -19,7 +31,6 @@
   <meta property="og:url" content="https://gulsonmanlong.github.io/Trust-Car/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Style (same as before) -->
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; }
     header { background-color: #007bff; color: white; padding: 20px; text-align: center; }
@@ -94,3 +105,19 @@
   </footer>
 </body>
 </html>
+"""
+
+# Save and zip
+from zipfile import ZipFile
+
+html_path = "/mnt/data/index.html"
+zip_path = "/mnt/data/trustcar_full_updated.zip"
+
+with open(html_path, "w") as f:
+    f.write(full_html_with_tracking)
+
+with ZipFile(zip_path, "w") as zipf:
+    zipf.write(html_path, arcname="index.html")
+
+zip_path
+  
